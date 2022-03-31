@@ -40,12 +40,13 @@ collections:
           - label: "GitHub account"
             name: "github_account"
             widget: "string"
-    - label: "Cats"
-      name: "cats"
-      folder: "_posts/cats"
-      create: true
-      identifier_field: name
-      fields:
-        - {label: "Name", name: "name", widget: "string"}
-        - {label: "Featured Image", name: "thumbnail", widget: "image"}
-        - {label: "Description", name: "description", widget: "text"}
+
+  - label: "Cats"
+    name: "cats"
+    folder: "_posts/cats"
+    create: true
+    identifier_field: name
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
