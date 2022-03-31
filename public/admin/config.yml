@@ -1,3 +1,51 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: "config"
+    label: "Config"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Site Config"
+        file: "config.json"
+        description: "General site settings"
+        fields:
+          - label: "URL"
+            name: "base_url"
+            widget: "string"
+            hint: "Do not enter the trailing slash of the URL"
+          - label: "Site title"
+            name: "site_title"
+            widget: "string"
+          - label: "Site description"
+            name: "site_description"
+            widget: "string"
+          - label: "Site keywords"
+            name: "site_keywords"
+            widget: "list"
+            summary: "{{fields.keyword.keyword}}"
+            field:
+              label: Keyword
+              name: keyword
+              widget: "string"
+          - label: "Twitter account"
+            name: "twitter_account"
+            widget: "string"
+          - label: "GitHub account"
+            name: "github_account"
+            widget: "string"
+    - label: "Cats"
+      name: "cats"
+      folder: "_posts/cats"
+      create: true
+      identifier_field: name
+      fields:
+        - {label: "Name", name: "name", widget: "string"}
+        - {label: "Featured Image", name: "thumbnail", widget: "image"}
+        - {label: "Description", name: "description", widget: "text"}
