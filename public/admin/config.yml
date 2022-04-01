@@ -48,5 +48,5 @@ collections:
     identifier_field: name
     fields:
       - {label: "Name", name: "name", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Image", name: "image", widget: "image"}
       - {label: "Description", name: "description", widget: "text"}
