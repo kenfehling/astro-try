@@ -1,21 +1,17 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import { babel } from '@rollup/plugin-babel';
-// import postcss from 'rollup-plugin-postcss';
+import linaria from '@linaria/rollup';
+
+console.log(linaria.default);
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [react()],
 	vite: {
 		plugins: [
-			babel({
-			  plugins: ['astroturf/plugin'],
+			linaria.default({
+			  sourceMap: process.env.NODE_ENV !== 'production',
 			})
-			// postcss({
-			//   extract: 'app.css',
-			//   modules: true,
-			// //   plugins: [postcssNested],
-			// }),
-		  ]
+		]
 	}
 });
