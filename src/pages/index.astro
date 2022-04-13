@@ -26,8 +26,8 @@ let allCats = await Astro.fetchContent('../../_posts/cats/*.md');
 	</head>
 	<body>
 		<main>
-			<div className="cats">
-				{allCats.map(cat => <Cat {...cat} />)}
+			<div class="cats">
+				{allCats.map(cat => <Cat client:idle {...cat} />)}
 			</div>
 		</main>
 	</body>
