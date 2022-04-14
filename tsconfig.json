@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    // "module": "esnext",
-    // "target": "esnext"
+    "moduleResolution": "node"
   }
 }
