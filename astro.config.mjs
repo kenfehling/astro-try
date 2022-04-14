@@ -6,7 +6,7 @@ export default defineConfig({
 	integrations: [react()],
 	vite: {
 		plugins: [
-			linaria.default({
+			linaria.default({  // Usually just linaria() should work?
 			  sourceMap: process.env.NODE_ENV !== 'production',
 			})
 		]

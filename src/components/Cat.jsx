@@ -12,6 +12,10 @@ const CatContainer = styled.div`
 	& > img {
 		width: 100%;
 	}
+
+	@media only screen and (max-width: 600px) {
+		background-color: #F00;
+	}
 `;
 
 const Cat = ({image, name, description}) => (

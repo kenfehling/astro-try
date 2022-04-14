@@ -1,7 +1,9 @@
 ---
 import Cat from '../components/Cat.jsx';
+import Nav from '../components/Nav.jsx';
 import { SEO } from "astro-seo";
 import config from "../../config";
+import * as cfg from '../config';
 let allCats = await Astro.fetchContent('../../_posts/cats/*.md');
 ---
 
@@ -14,17 +16,25 @@ let allCats = await Astro.fetchContent('../../_posts/cats/*.md');
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<style>
+			@media (prefers-color-scheme: dark) {
+				html, body {
+					background-color: #262626;
+				}
+			}
 			html,
 			body {
 				font-family: system-ui;
 				margin: 0;
+				padding: 0;
 			}
-			body {
-				padding: 2rem;
+			nav {
+				height: 55px;
+				background-color: #121212;
 			}
 		</style>
 	</head>
 	<body>
+		<nav><Nav client:load /></nav>
 		<main>
 			<div class="cats">
 				{allCats.map(cat => <Cat client:idle {...cat} />)}
